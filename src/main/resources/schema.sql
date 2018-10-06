@@ -1,4 +1,4 @@
-create table oauth_client_details (
+create table if not exists oauth_client_details (
   client_id VARCHAR(256) PRIMARY KEY,
   resource_ids VARCHAR(256),
   client_secret VARCHAR(256),
@@ -12,7 +12,7 @@ create table oauth_client_details (
   autoapprove VARCHAR(256)
 );
 
-create table oauth_client_token (
+create table if not exists oauth_client_token (
   token_id VARCHAR(256),
   token BLOB,
   authentication_id VARCHAR(256) PRIMARY KEY,
@@ -20,7 +20,7 @@ create table oauth_client_token (
   client_id VARCHAR(256)
 );
 
-create table oauth_access_token (
+create table if not exists oauth_access_token (
   token_id VARCHAR(256),
   token BLOB,
   authentication_id VARCHAR(256) PRIMARY KEY,
@@ -30,17 +30,17 @@ create table oauth_access_token (
   refresh_token VARCHAR(256)
 );
 
-create table oauth_refresh_token (
+create table if not exists oauth_refresh_token (
   token_id VARCHAR(256),
   token BLOB,
   authentication BLOB
 );
 
-create table oauth_code (
+create table if not exists oauth_code (
   code VARCHAR(256), authentication BLOB
 );
 
-create table oauth_approvals (
+create table if not exists oauth_approvals (
 	userId VARCHAR(256),
 	clientId VARCHAR(256),
 	scope VARCHAR(256),
@@ -51,7 +51,7 @@ create table oauth_approvals (
 
 
 -- customized oauth_client_details table
-create table ClientDetails (
+create table if not exists ClientDetails (
   appId VARCHAR(256) PRIMARY KEY,
   resourceIds VARCHAR(256),
   appSecret VARCHAR(256),

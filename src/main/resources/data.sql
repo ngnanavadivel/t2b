@@ -18,7 +18,7 @@ VALUES
 "data_api_client", 
 "{noop}secret", 
 "READ,WRITE", 
-"client_credentials", 
+"client_credentials,implicit", 
 null, 
 null, 
 36000, 
