@@ -1,1 +1,1 @@
-# t2b
+# t2b-oauth2-server
